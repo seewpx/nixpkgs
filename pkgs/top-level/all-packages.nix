@@ -6697,6 +6697,8 @@ with pkgs;
   };
   kakouneUtils = callPackage ../applications/editors/kakoune/plugins/kakoune-utils.nix { };
 
+  kaffeine = libsForQt5.callPackage ../applications/video/kaffeine { };
+
   kak-lsp = callPackage ../tools/misc/kak-lsp {
     inherit (darwin.apple_sdk.frameworks) Security SystemConfiguration;
   };
@@ -9843,6 +9845,8 @@ with pkgs;
   sx = callPackage ../tools/X11/sx {
     inherit (xorg) xauth xorgserver;
   };
+
+  systemdgenie = libsForQt5.callPackage ../applications/system/systemdgenie { };
 
   t = callPackage ../tools/misc/t { };
 
@@ -13869,8 +13873,8 @@ with pkgs;
   inherit (callPackage ../development/tools/alloy {
     jre = jre8; # TODO: remove override https://github.com/NixOS/nixpkgs/pull/89731
   })
-    alloy4
     alloy5
+    alloy6
     alloy;
 
   altair = callPackage ../development/tools/altair-graphql-client { };
@@ -14652,14 +14656,15 @@ with pkgs;
 
   gpuvis = callPackage ../development/tools/misc/gpuvis { };
 
-  gradleGen = callPackage ../development/tools/build-managers/gradle {
-    java = jdk8; # TODO: upgrade https://github.com/NixOS/nixpkgs/pull/89731
+  gradle-packages = import ../development/tools/build-managers/gradle {
+    inherit jdk8 jdk11 jdk17;
   };
-  gradle = res.gradleGen.gradle_latest;
-  gradle_4 = res.gradleGen.gradle_4_10;
-  gradle_5 = res.gradleGen.gradle_5_6;
-  gradle_6 = res.gradleGen.gradle_6_9;
-  gradle_7 = res.gradleGen.gradle_7_3;
+  gradleGen = gradle-packages.gen;
+  gradle_4 = callPackage gradle-packages.gradle_4 { };
+  gradle_5 = callPackage gradle-packages.gradle_5 { };
+  gradle_6 = callPackage gradle-packages.gradle_6 { };
+  gradle_7 = callPackage gradle-packages.gradle_7 { };
+  gradle = gradle_7;
 
   gperf = callPackage ../development/tools/misc/gperf { };
   # 3.1 changed some parameters from int to size_t, leading to mismatches.
@@ -27111,8 +27116,6 @@ with pkgs;
   };
 
   yambar = callPackage ../applications/misc/yambar { };
-
-  yambar-wayland = callPackage ../applications/misc/yambar { waylandSupport = true; };
 
   polyphone = libsForQt514.callPackage ../applications/audio/polyphone { };
 
