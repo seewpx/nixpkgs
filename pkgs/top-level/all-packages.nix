@@ -277,6 +277,8 @@ with pkgs;
 
   corgi = callPackage ../development/tools/corgi { };
 
+  colmena = callPackage ../tools/admin/colmena { };
+
   colobot = callPackage ../games/colobot {};
 
   colorz = callPackage ../tools/misc/colorz { };
@@ -1716,8 +1718,6 @@ with pkgs;
   };
 
   genymotion = callPackage ../development/mobile/genymotion { };
-
-  gaia = callPackage ../development/libraries/gaia { };
 
   galene = callPackage ../servers/web-apps/galene {
     buildGoModule = buildGo115Module;
