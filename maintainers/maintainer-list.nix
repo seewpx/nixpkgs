@@ -14675,6 +14675,12 @@
     githubId = 60079945;
     keys = [ { fingerprint = "7590 C9DD E19D 4497 9EE9  0B14 CE96 9670 FB4B 4A56"; } ];
   };
+  madeddie = {
+    email = "edwin@madtech.cx";
+    github = "madeddie";
+    githubId = 140660;
+    name = "Edwin Hermans";
+  };
   madjar = {
     email = "georges.dubus@compiletoi.net";
     github = "madjar";
@@ -27094,6 +27100,12 @@
     githubId = 41458459;
     name = "Zexin Yuan";
     keys = [ { fingerprint = "FE16 B281 90EF 6C3F F661  6441 C2DD 1916 FE47 1BE2"; } ];
+  };
+  zacharyweiss = {
+    name = "Zachary Weiss";
+    email = "me@zachary.ws";
+    github = "zacharyweiss";
+    githubId = 20050953;
   };
   zachcoyle = {
     email = "zach.coyle@gmail.com";

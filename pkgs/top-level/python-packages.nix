@@ -2803,6 +2803,8 @@ self: super: with self; {
 
   consonance = callPackage ../development/python-modules/consonance { };
 
+  constantdict = callPackage ../development/python-modules/constantdict { };
+
   constantly = callPackage ../development/python-modules/constantly { };
 
   construct = callPackage ../development/python-modules/construct { };
@@ -4852,6 +4854,8 @@ self: super: with self; {
   feedparser = callPackage ../development/python-modules/feedparser { };
 
   fenics = callPackage ../development/python-modules/fenics { hdf5 = pkgs.hdf5_1_10; };
+
+  fenics-ufl = callPackage ../development/python-modules/fenics-ufl { };
 
   ffcv = callPackage ../development/python-modules/ffcv { };
 
@@ -8966,7 +8970,7 @@ self: super: with self; {
 
   mmtf-python = callPackage ../development/python-modules/mmtf-python { };
 
-  mne-python = callPackage ../development/python-modules/mne-python { };
+  mne = callPackage ../development/python-modules/mne { };
 
   mnemonic = callPackage ../development/python-modules/mnemonic { };
 
