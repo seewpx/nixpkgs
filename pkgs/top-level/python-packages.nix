@@ -11977,6 +11977,8 @@ self: super: with self; {
 
   pvo = callPackage ../development/python-modules/pvo { };
 
+  pwdlib = callPackage ../development/python-modules/pwdlib { };
+
   pweave = callPackage ../development/python-modules/pweave { };
 
   pwinput = callPackage ../development/python-modules/pwinput { };
@@ -19428,6 +19430,8 @@ self: super: with self; {
   wsgiproxy2 = callPackage ../development/python-modules/wsgiproxy2 { };
 
   wsgitools = callPackage ../development/python-modules/wsgitools { };
+
+  wslink = callPackage ../development/python-modules/wslink { };
 
   wsme = callPackage ../development/python-modules/wsme { };
 
