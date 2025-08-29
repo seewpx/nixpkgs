@@ -2721,8 +2721,12 @@ with pkgs;
   dsview = libsForQt5.callPackage ../applications/science/electronics/dsview { };
 
   inherit (import ../build-support/dlang/dub-support.nix { inherit callPackage; })
-    buildDubPackage
     dub-to-nix
+    importDubLock
+    buildDubPackage
+    dubSetupHook
+    dubBuildHook
+    dubCheckHook
     ;
 
   dvtm = callPackage ../tools/misc/dvtm {
@@ -7123,8 +7127,8 @@ with pkgs;
 
   qtcreator = qt6Packages.callPackage ../development/tools/qtcreator {
     inherit (linuxPackages) perf;
-    llvmPackages = llvmPackages_18;
-    stdenv = llvmPackages_18.stdenv;
+    llvmPackages = llvmPackages_21;
+    stdenv = llvmPackages_21.stdenv;
   };
 
   qxmledit = libsForQt5.callPackage ../applications/editors/qxmledit { };
